@@ -26,13 +26,5 @@ namespace ConsoleApp
             xs.Serialize(sw, _publicKey);
             return sw.ToString();
         }
-
-    public string Encrypt(string plainText)
-    {
-        csp = new RSACryptoServiceProvider();
-        csp.ImportParameters(_publicKey);
-        var data = Encoding.Unicode.GetBytes(plainText);
-        var cypher = csp.Encrypt(data, false);
     }
-
 }
